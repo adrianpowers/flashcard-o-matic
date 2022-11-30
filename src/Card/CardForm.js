@@ -47,6 +47,7 @@ export default function CardForm({ deckId, card }) {
       console.log("Editing card...")
       setFormData({ ...initialFormState });
       history.push(`/decks/${deckId}`);
+      history.go(0);
     };
   }
 
@@ -74,7 +75,7 @@ export default function CardForm({ deckId, card }) {
         defaultValue={card.back}
       />
       <br />
-      <button className="btn btn-secondary" onClick={() => history.push(`/decks/${deckId}/`)}>
+      <button className="btn btn-secondary" onClick={() => history.push(`/decks/${deckId}`)}>
         { isEditing ? "Cancel" : "Done" }
       </button>
       <button type="submit" className="btn btn-primary ml-2">
