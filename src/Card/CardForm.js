@@ -42,9 +42,7 @@ export default function CardForm({ deckId, card }) {
     }
     handleSubmit = async (event) => {
       event.preventDefault();
-      const updatedCard = await updateCard(formData);
-      console.log(updatedCard);
-      console.log("Editing card...")
+      await updateCard(formData);
       setFormData({ ...initialFormState });
       history.push(`/decks/${deckId}`);
       history.go(0);

@@ -81,7 +81,7 @@ export default function Deck() {
             <EditDeck deck={deck}/>
           </Route>
           <Route path={`${path}/cards`}>
-            <CardSwitch />
+            <CardSwitch deck={deck} />
           </Route>
         </Switch>
       </div>

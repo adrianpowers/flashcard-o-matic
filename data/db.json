@@ -48,28 +48,22 @@
       "id": 5
     },
     {
-      "front": "aaaa",
-      "back": "aaaa",
-      "deckId": 3,
-      "id": 6
-    },
-    {
-      "front": "bbbb",
-      "back": "bbbb",
-      "deckId": 3,
-      "id": 7
-    },
-    {
-      "front": "cccc",
-      "back": "cccc",
+      "front": "a",
+      "back": "a",
       "deckId": 3,
       "id": 8
     },
     {
-      "front": "eeee",
-      "back": "eeee",
+      "front": "dddd",
+      "back": "dddd",
       "deckId": 3,
       "id": 9
+    },
+    {
+      "front": "zxcvzxcv",
+      "back": "zxcvzxcv",
+      "deckId": 3,
+      "id": 10
     }
   ]
 }
