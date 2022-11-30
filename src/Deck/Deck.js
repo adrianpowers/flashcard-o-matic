@@ -11,9 +11,8 @@ import { readDeck, deleteDeck } from "../utils/api";
 import TwoLevelBreadcrumb from "../utils/TwoLevelBreadcrumb";
 import Card from "../Card/Card";
 import Study from "../Study/Study";
-import EditCard from "../Card/EditCard";
 import EditDeck from "../EditDeck/EditDeck";
-import AddCard from "../Card/AddCard";
+import CardSwitch from "../Card/CardSwitch";
 
 export default function Deck() {
   const { deckId } = useParams();
@@ -76,16 +75,13 @@ export default function Deck() {
             ))}
           </Route>
           <Route path={`${path}/study`}>
-            <Study />
+            <Study deck={deck} cards={cards}/>
           </Route>
           <Route path={`${path}/edit`}>
-            <EditDeck />
+            <EditDeck deck={deck}/>
           </Route>
-          <Route path={`${path}/cards/:cardId/edit`}>
-            <EditCard />
-          </Route>
-          <Route path={`${path}/cards/new`}>
-            <AddCard />
+          <Route path={`${path}/cards`}>
+            <CardSwitch />
           </Route>
         </Switch>
       </div>
