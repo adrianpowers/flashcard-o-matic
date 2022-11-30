@@ -1,6 +1,7 @@
 import React from "react";
 
 function Header() {
+  // simple header, supplied by Qualified.
   return (
     <header className="jumbotron bg-dark">
       <div className="container text-white">

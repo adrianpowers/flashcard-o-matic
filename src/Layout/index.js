@@ -5,6 +5,9 @@ import Home from "./Home"
 import DeckSwitch from "../Deck/DeckSwitch"
 import NotFound from "./NotFound";
 
+// a simple beginner Switch that allows the header to be present on ALL pages.
+// routes to the homepage, the empty DeckSwitch page at /decks/,
+// and handles the 404.
 function Layout() {
   return (
     <>

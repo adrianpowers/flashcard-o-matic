@@ -6,9 +6,11 @@ import CardForm from "./CardForm"
 
 export default function EditCard({deck}) {
 
+  // Deck prop is deck state passed down from Deck -> CardSwitch. 
   const { cardId } = useParams();
   const [card, setCard] = useState([]);
 
+  // loads card with API tools using CardId from params.
   useEffect(() => {
     async function loadDeck() {
       const loadedCard = await readCard(cardId);
@@ -17,9 +19,12 @@ export default function EditCard({deck}) {
     loadDeck();
   }, [cardId]);
 
+  // returns JSX of:
+  // relevant Breadcrumb component, passing Deck and Card states down
+  // and a CardForm which passes down the deck state's ID value and the Card state.
   return (
     <>
-      <ThreeLevelBreadcrumb deck={deck} card={card}/>
+      <ThreeLevelBreadcrumb deck={deck} />
       <h1>Edit Card</h1>
       <CardForm deckId={deck.id} card={card} />
     </>

@@ -3,6 +3,10 @@ import { useHistory } from "react-router-dom";
 import { createCard, updateCard } from "../utils/api";
 
 export default function CardForm({ deckId, card }) {
+
+  // takes a DeckID and a Card as props.
+
+  // sets initial form state to an empty card front and back.
   const initialFormState = {
     front: "",
     back: "",
@@ -10,10 +14,18 @@ export default function CardForm({ deckId, card }) {
 
   const [formData, setFormData] = useState({ ...initialFormState });
 
+  // uses history to refresh page and return to the Deck page when relevant.
   const history = useHistory();
+
+  // handlers begin null and are assigned values based on the length of the Card prop.
+  // the change and submit will be different depending on whether... 
+  // we are adding a new card (when the card length is 0)
+  // or if we are editing a card (when the card length is > 0)
 
   let handleChange = null;
   let handleSubmit = null;
+
+  // this boolean lets us conditionally render different button texts within the JSX return statement.
   let isEditing = false;
 
   if (card.length === 0) {

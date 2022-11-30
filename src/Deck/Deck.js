@@ -14,7 +14,15 @@ import Study from "../Study/Study";
 import EditDeck from "../EditDeck/EditDeck";
 import CardSwitch from "../Card/CardSwitch";
 
+// this Deck component serves as the main functional component in this app
+// by holding and passing down the state for over half the project.
+
 export default function Deck() {
+
+  // uses the DeckID param from the path to load the deck in a useEffect,
+  // sets deck and card states to empty arrays,
+  // grabs URL and path from useRouteMatch to make buttons and routes work,
+  // and creates a history to allow for returning to homepage after deck deletion.
   const { deckId } = useParams();
   const [deck, setDeck] = useState([]);
   const [cards, setCards] = useState([]);
@@ -37,6 +45,11 @@ export default function Deck() {
     }
   };
 
+  // the JSX in the return statement is within a switch to allow for nested routes.
+  // at the exact path of the deck, returns an in depth page containing the deck,
+  // the deck's cards, and several buttons to allow for CRUD operations.
+  // the other routes go to the Study and Edit pages for this deck,
+  // as well as an empty page, CardSwitch, that holds the routes for all the Card-related components. 
   return (
     <>
       <div>
@@ -75,7 +88,7 @@ export default function Deck() {
             ))}
           </Route>
           <Route path={`${path}/study`}>
-            <Study deck={deck} cards={cards}/>
+            <Study />
           </Route>
           <Route path={`${path}/edit`}>
             <EditDeck deck={deck}/>

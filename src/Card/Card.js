@@ -7,6 +7,13 @@ import {
 import { deleteCard } from "../utils/api";
 
 export default function Card(card) {
+
+  // takes a Card as a prop.
+  // this component is only called within the cards.map() in Deck.js.
+  // uses URL from useRouteMatch to make Links functional.
+  // uses the front, back, and ID of the active Card to populate JSX with information.
+  // uses History to refresh the page upon deletion of the active card.
+
   const { url } = useRouteMatch();
   const { front, back, id } = card.card;
   const history = useHistory();

@@ -1,8 +1,12 @@
 import React from "react";
 import { Link, useRouteMatch, useParams } from "react-router-dom";
 
-export default function ThreeLevelBreadcrumb({deck, card}) {
+// takes Deck state as a prop
 
+export default function ThreeLevelBreadcrumb({deck}) {
+
+  // uses path and CardId and a variable called "active"
+  // to make the breadcrumb match the active page's name 
   const { path } = useRouteMatch()
   const { cardId } = useParams();
   let active = "";

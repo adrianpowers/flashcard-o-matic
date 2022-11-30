@@ -1,5 +1,6 @@
 import React from "react";
 
+// simple 404, supplied by Qualified.
 function NotFound() {
   return (
     <div className="NotFound">
